@@ -5,7 +5,7 @@ console.log('starting app');
 
 const fs = require('fs');
 const os = require('os');
-const notes = ('/notes.js');
+const notes = require('./notes.js');
 
 
 
