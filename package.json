@@ -2,7 +2,7 @@
   "name": "noteapp",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,10 +10,13 @@
     "type": "git",
     "url": "git+https://github.com/Contrapuntist/noteapp.git"
   },
-  "author": "",
+  "author": "Miguel A. Cano",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Contrapuntist/noteapp/issues"
   },
-  "homepage": "https://github.com/Contrapuntist/noteapp#readme"
+  "homepage": "https://github.com/Contrapuntist/noteapp#readme",
+  "dependencies": {
+    "lodash": "^4.17.5"
+  }
 }
