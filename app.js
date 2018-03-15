@@ -4,20 +4,23 @@ console.log('starting app');
 // fs.appendFile 
 
 const fs = require('fs');
-const os = require('os');
+const _ = require('lodash');
+
 const notes = require('./notes.js');
 
-var res = notes.addNote();
-console.log(res);
+var command = process.argv[2]; 
+console.log('Command: '+ command); 
+console.log(process.argv);
 
-console.log('Total', notes.add(3, 4));
-
-// var user = os.userInfo();
-
-// fs.appendFileSync('greetings.txt', `Hello ${user.username}! You are ${notes.age}.`); 
-// fs.appendFile("greetings.txt", "Hello World", function(err) { 
-//     if (err) { 
-//         console.log("Err message: " + err);
-//     }
-// })
+if (command === 'add') { 
+    console.log('adding new note');
+} else if (command === 'list') {
+    console.log('listing all notes');
+} else if (command === 'read') {
+    console.log('reading these notes');
+} else if (command === 'remove') {
+    console.log('Note has been removed');
+} else { 
+    console.log('command not recognized');
+} 
 
