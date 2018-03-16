@@ -16,7 +16,16 @@ console.log("Command: " + command);
 console.log("Yargs: ",  argv);
 
 if (command === 'add') { 
-    notes.addNote(argv.title, argv.body);
+    var note = notes.addNote(argv.title, argv.body);
+    console.log (note); 
+    if (note) { 
+        console.log('Note added');
+        console.log('---');
+        console.log(`Title: ${note.title}`);
+        console.log(`Body: ${note.body}`);
+    } else { 
+        console.log('Note was not added. It might be a duplicate.');
+    }
 } else if (command === 'list') {
     console.log('listing all notes');
     notes.getAll();
@@ -24,8 +33,10 @@ if (command === 'add') {
     console.log('reading these notes');
     notes.getNote(argv.title);
 } else if (command === 'remove') {
-    console.log('Note has been removed');
-    notes.removeNote(argv.title);
+    // console.log('Note has been removed');
+    var noteRemoved = notes.removeNote(argv.title);
+    var message = noteRemoved ? "Note was removed" : "Note was not removed";
+    console.log(message);
 } else { 
     console.log('command not recognized');
 } 
